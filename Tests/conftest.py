@@ -26,6 +26,7 @@ def setup(request, get_webdriver):
     if request.cls is not None:
         request.cls.driver = driver
     driver.get(url)
+    driver.execute_script("document.body.style.zoom='80%'")
     yield driver
     driver.close()
     driver.quit()

@@ -34,7 +34,8 @@ class Form(SeleniumBase):
         return self.is_visible('css', self.email, '')
 
     def find_gender(self):
-        return self.is_visible('css', self.gender, '')
+        button = self.is_visible('css', self.gender, '')
+        self.click_on_element(button)
 
     def find_mobile(self):
         return self.is_visible('css', self.mobile, '')
@@ -43,15 +44,15 @@ class Form(SeleniumBase):
         return self.is_visible('css', self.dateOfBirth, '')
 
     def find_hobbies(self):
-        return self.is_visible('css', self.hobbies, '')
+        button = self.is_visible('css', self.hobbies, '')
+        self.click_on_element(button)
 
     def find_currentAddress(self):
         return self.is_visible('css', self.currentAddress, '')
 
     def find_button_submit(self):
-        item = self.is_present('CSS', self.button_submit)
-        self.go_to_element(item)
-        item.click()
+        button = self.is_visible('css', self.button_submit)
+        self.click_on_element(button)
 
     def find_table_element(self):
         table_element = self.are_visible('css', self.table_item)

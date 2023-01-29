@@ -11,12 +11,13 @@ class TestElements:
 
     def test_text_box(self):
         form_page = Form(self.driver)
+        time.sleep(5)
         form_page.find_name().send_keys('Test')
         form_page.find_lastName().send_keys('Test')
         form_page.find_email().send_keys('Test@test.test')
-        form_page.find_gender().click()
+        form_page.find_gender()
         form_page.find_mobile().send_keys('1000000000')
-        form_page.find_hobbies().click()
+        form_page.find_hobbies()
         form_page.find_currentAddress().send_keys('Text')
         time.sleep(2)
         form_page.find_button_submit()
